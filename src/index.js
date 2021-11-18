@@ -4,13 +4,50 @@ import ReactDOM from "react-dom";
 //stateless functional component
 // always return JSX
 //have to return something & two component won't have same name
-
-function Greeting() {
-  return <h4>Hello World, Welcome to React World</h4>;
-}
+//  <>  </>  // react fragment
+// use camelCase for html attributes
+//close all elements
 
 // const Greeting = () => {
-//   return React.createElement("h4", {}, "Hello world");
+//   return React.createElement(
+//     "div",
+//     {},
+//     React.createElement("h4", {}, "Hello world")
+//   );
 // };
 
-ReactDOM.render(<Greeting />, document.getElementById("root"));
+function BookList() {
+  return (
+    <section>
+      <Book />
+    </section>
+  );
+}
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+
+const Image = () => {
+  return <img src="https://m.media-amazon.com/images/I/41-G7AIOZyL.jpg" />;
+};
+
+const Title = () => {
+  return (
+    <h1>
+      Do It Today: Overcome Procrastination, Improve Productivity, and Achieve
+      More Meaningful Things
+    </h1>
+  );
+};
+
+const Author = () => {
+  return <h4>by Darius Foroux</h4>;
+};
+
+ReactDOM.render(<BookList />, document.getElementById("root"));
