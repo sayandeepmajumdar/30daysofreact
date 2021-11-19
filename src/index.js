@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+//css importing
+import "./index.css";
 
 //stateless functional component
 // always return JSX
@@ -18,14 +20,24 @@ import ReactDOM from "react-dom";
 
 function BookList() {
   return (
-    <section>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       <Book />
     </section>
   );
 }
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image />
       <Title />
       <Author />
