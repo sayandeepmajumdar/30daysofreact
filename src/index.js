@@ -3,63 +3,17 @@ import ReactDOM from "react-dom";
 //css importing
 import "./index.css";
 
-//stateless functional component
-// always return JSX
-//have to return something & two component won't have same name
-//  <>  </>  // react fragment
-// use camelCase for html attributes
-//close all elements
-
-// const Greeting = () => {
-//   return React.createElement(
-//     "div",
-//     {},
-//     React.createElement("h4", {}, "Hello world")
-//   );
-// };
+import { books } from "./books"; // this is my component's data
+import Book from "./Book"; // this is my component. if the export is default then i can change the object name here
 
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      {books.map((book) => {
+        return <Book key={book.id} {...book}></Book>; // Spread operator (simply spread out the values from the book object)
+      })}
     </section>
   );
 }
-const Book = () => {
-  return (
-    <article className="book">
-      <Image />
-      <Title />
-      <Author />
-    </article>
-  );
-};
-
-const Image = () => {
-  return <img src="https://m.media-amazon.com/images/I/41-G7AIOZyL.jpg" />;
-};
-
-const Title = () => {
-  return (
-    <h1>
-      Do It Today: Overcome Procrastination, Improve Productivity, and Achieve
-      More Meaningful Things
-    </h1>
-  );
-};
-
-const Author = () => {
-  return <h4>by Darius Foroux</h4>;
-};
 
 ReactDOM.render(<BookList />, document.getElementById("root"));
