@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# 30 Days of React Development
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is begineer level of development.
 
-## Available Scripts
+## Day by Day
 
-In the project directory, you can run:
+### Day 1
+
+Installing the React Project & overview of it's pros and cons
 
 ### `npm start`
 
